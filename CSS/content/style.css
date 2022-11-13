@@ -1,0 +1,23 @@
+body{
+    background-image: linear-gradient(to right,rgba(86, 141, 34, 0.555),rgba(97, 86, 199, 0.493),rgba(255, 216, 90, 0.664));
+    height: 100vh;
+    font-family: cursive;
+}
+div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    counter-reset: anything_1;
+}
+h1{
+    counter-reset: anything_2;
+}
+h1::before{
+    counter-increment: anything_1;
+    content:"Section" counter(anything_1)".";
+}
+p::before{
+    counter-increment: anything_2;
+    content:counter(anything_1)"."counter(anything_2);
+}
